@@ -53,19 +53,24 @@ public class MovimientoJugador : MonoBehaviour
 
         if (Input.GetButton("Jump") && !isJumping) 
         {
+			animator.SetBool("isJump", true);
             rb2d.AddForce(Vector2.up * potenciaSalto);
             isJumping = true;    
         }
 
-
-
-
+		if(rb2d.velocity.y<0){
+			animator.SetBool("isFalling", true);
+		}else if(rb2d.velocity.y>0){
+			animator.SetBool("isFalling", false);
+		}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
+			animator.SetBool("isJump", false);
+			animator.SetBool("isFalling", false);
             isJumping = false;
             rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
         }
