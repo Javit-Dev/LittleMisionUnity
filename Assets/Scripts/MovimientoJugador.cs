@@ -55,11 +55,16 @@ public class MovimientoJugador : MonoBehaviour
 
         if (Input.GetButton("Jump") && !isJumping) 
         {
+			animator.SetBool("isJump", true);
             rb2d.AddForce(Vector2.up * potenciaSalto);
             isJumping = true;    
         }
 
-
+		if(rb2d.velocity.y<0){
+			animator.SetBool("isFalling", true);
+		}else if(rb2d.velocity.y>0){
+			animator.SetBool("isFalling", false);
+		}
 
 
     }
@@ -67,6 +72,8 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
+			animator.SetBool("isJump", false);
+			animator.SetBool("isFalling", false);
             isJumping = false;
         }
     }
@@ -75,7 +82,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
-            isJumping = true;
+			isJumping = true;
         }
     }
 
