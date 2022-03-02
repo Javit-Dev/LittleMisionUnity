@@ -12,6 +12,9 @@ public class MovimientoJugador : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer spRd;
 
+    private float characterIPositionX;
+    private float characterIPositionY;
+
     private Animator animator;
 
     bool isJumping = false;
@@ -23,6 +26,9 @@ public class MovimientoJugador : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         spRd = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        characterIPositionX = transform.position.x;
+        characterIPositionY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -76,6 +82,12 @@ public class MovimientoJugador : MonoBehaviour
 			animator.SetBool("isFalling", false);
             isJumping = false;
         }
+
+        if (collision.gameObject.CompareTag("Limite"))
+        {
+            transform.position = (new Vector2(characterIPositionX, characterIPositionY));
+            rb2d.velocity = new Vector2(0, 0);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -89,5 +101,10 @@ public class MovimientoJugador : MonoBehaviour
     public void IncrementarCantidad() {
         puntuacion++;
         Texto.GetComponent<TMPro.TextMeshProUGUI>().text = puntuacion + "/2";
+    }
+
+    public void ReachedCheckpoint() {
+        characterIPositionX = transform.position.x;
+        characterIPositionY = transform.position.y;
     }
 }
