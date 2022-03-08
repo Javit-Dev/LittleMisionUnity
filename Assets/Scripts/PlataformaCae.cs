@@ -57,10 +57,10 @@ public class PlataformaCae : MonoBehaviour
         spr2.material.color = c2;
         Color c3 = spr3.material.color;
         c3.a = 0f;
-        spr3.material.color = c1;
+        spr3.material.color = c3;
         Color c4 = spr4.material.color;
         c4.a = 0f;
-        spr4.material.color = c2;
+        spr4.material.color = c4;
         StartCoroutine("FadeIn");
 
     }
@@ -76,10 +76,10 @@ public class PlataformaCae : MonoBehaviour
             spr2.material.color = c2;
             Color c3 = spr3.material.color;
             c3.a = f;
-            spr3.material.color = c1;
+            spr3.material.color = c3;
             Color c4 = spr4.material.color;
             c4.a = f;
-            spr4.material.color = c2;
+            spr4.material.color = c4;
             yield return new WaitForSeconds(0.025f);
         }
     }
