@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44d7b7539df2e540993dc81e4dbbd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoEspera: 0.2
+  tiempoEspera: 0.32
   tiempoaparece: 1.4
   sprite1: {fileID: 2467418182463218657}
   sprite2: {fileID: 2467418182868778526}
