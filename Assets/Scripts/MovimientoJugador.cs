@@ -17,8 +17,13 @@ public class MovimientoJugador : MonoBehaviour
 
     private Animator animator;
 
-    bool isJumping = false;
+    public bool isJumping = false;
     [Range(1, 500)] public float potenciaSalto;
+
+    //Variables de hitbox
+    //En un principio necesito esta hitbox para ver si está activa en los OnTriggerEnter/Exit
+    //Porque si no bugea el salto (Posible solución: Raycast)
+    public GameObject hitbox;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +39,10 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.SetBool("isAttacking", true);
+        }
     }
 
     void FixedUpdate()
@@ -76,7 +84,7 @@ public class MovimientoJugador : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Suelo") && !hitbox.GetComponent<Collider2D>().isActiveAndEnabled)
         {
 			animator.SetBool("isJump", false);
 			animator.SetBool("isFalling", false);
@@ -92,7 +100,7 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Suelo") && !hitbox.GetComponent<Collider2D>().isActiveAndEnabled)
         {
 			isJumping = true;
         }
@@ -106,5 +114,10 @@ public class MovimientoJugador : MonoBehaviour
     public void ReachedCheckpoint() {
         characterIPositionX = transform.position.x;
         characterIPositionY = transform.position.y;
+    }
+
+    public void AttackEnded()
+    {
+        animator.SetBool("isAttacking", false);
     }
 }
