@@ -18,6 +18,8 @@ public class MovimientoJugador : MonoBehaviour
     private Animator animator;
 
     public bool isJumping = false;
+	public bool isAttack=false;
+	
     [Range(1, 500)] public float potenciaSalto;
 
     //Variables de hitbox
@@ -39,9 +41,10 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !isAttack)
         {
             animator.SetBool("isAttacking", true);
+			isAttack=true;
         }
     }
 
@@ -119,5 +122,6 @@ public class MovimientoJugador : MonoBehaviour
     public void AttackEnded()
     {
         animator.SetBool("isAttacking", false);
+		isAttack=false;
     }
 }
