@@ -19,13 +19,9 @@ public class MovimientoJugador : MonoBehaviour
 
     public bool isJumping = false;
 	public bool isAttack=false;
+    public bool isWalking = false;
 	
     [Range(1, 500)] public float potenciaSalto;
-
-    //Variables de hitbox
-    //En un principio necesito esta hitbox para ver si está activa en los OnTriggerEnter/Exit
-    //Porque si no bugea el salto (Posible solución: Raycast)
-    public GameObject hitbox;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +37,7 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttack)
+        if (Input.GetButtonDown("Fire1") && !isAttack && !isWalking && !isJumping)
         {
             animator.SetBool("isAttacking", true);
 			isAttack=true;
@@ -56,18 +52,20 @@ public class MovimientoJugador : MonoBehaviour
 
         if (movimientoH > 0) 
         {
-            spRd.flipX = false;    
+            transform.localScale = new Vector2((float)0.33507, (float)0.3368966);
         } else if (movimientoH < 0)
         {
-            spRd.flipX = true;
+            transform.localScale = new Vector2((float)-0.33507, (float)0.3368966);
         }
 
         if (movimientoH != 0) {
             animator.SetBool("isWalking", true);
+            isWalking = true;
         }
         else
         {
             animator.SetBool("isWalking", false);
+            isWalking = false;
         }
 
         if (Input.GetButton("Jump") && !isJumping) 
@@ -87,7 +85,7 @@ public class MovimientoJugador : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo") && !hitbox.GetComponent<Collider2D>().isActiveAndEnabled)
+        if (collision.gameObject.CompareTag("Suelo"))
         {
 			animator.SetBool("isJump", false);
 			animator.SetBool("isFalling", false);
@@ -103,9 +101,20 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo") && !hitbox.GetComponent<Collider2D>().isActiveAndEnabled)
+        if (collision.gameObject.CompareTag("Suelo"))
         {
 			isJumping = true;
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            //Respawn
+            transform.position = (new Vector2(characterIPositionX, characterIPositionY));
+            rb2d.velocity = new Vector2(0, 0);
         }
     }
 
