@@ -22,7 +22,8 @@ public class MovimientoJugador : MonoBehaviour
     public bool isWalking = false;
 	
     [Range(1, 500)] public float potenciaSalto;
-
+	
+	public Joystick joystick;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,17 +38,27 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isAttack && !isWalking && !isJumping)
+        /*if (Input.GetButtonDown("Fire1") && !isAttack && !isWalking && !isJumping)
         {
             animator.SetBool("isAttacking", true);
 			isAttack=true;
-        }
+        }*/
     }
 
     void FixedUpdate()
     {
 
-        float movimientoH = Input.GetAxisRaw("Horizontal");
+        //float movimientoH = Input.GetAxisRaw("Horizontal");
+		float movimientoH;
+
+        if ((joystick.Horizontal >= .2f) | (joystick.Horizontal <= .2f))
+        {
+            movimientoH = joystick.Horizontal;
+        }
+        else {
+            movimientoH = 0f;
+        }
+		
         rb2d.velocity = new Vector2(movimientoH * velocidad,rb2d.velocity.y);
 
         if (movimientoH > 0) 
@@ -133,4 +144,21 @@ public class MovimientoJugador : MonoBehaviour
         animator.SetBool("isAttacking", false);
 		isAttack=false;
     }
+	
+	public void Attack(){
+		if (!isAttack && !isWalking && !isJumping)
+        {
+            animator.SetBool("isAttacking", true);
+			isAttack=true;
+        }
+	}
+	
+	public void Jump(){
+		if (!isJumping) 
+        {
+			animator.SetBool("isJump", true);
+            rb2d.AddForce(Vector2.up * potenciaSalto);
+            isJumping = true;    
+        }
+	}
 }

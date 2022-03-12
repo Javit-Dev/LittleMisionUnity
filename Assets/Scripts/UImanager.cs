@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class UImanager : MonoBehaviour
 {
     public GameObject optionsPanel;
-
+	
     public void OptionsPanel() {
         Time.timeScale = 0;
         optionsPanel.SetActive(true);
@@ -19,10 +19,12 @@ public class UImanager : MonoBehaviour
 
     public void GoMainMenu() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame() {
-        Application.Quit();
+		Time.timeScale = 1;
+        optionsPanel.SetActive(false);
+        SceneManager.LoadScene("Preload");
     }
 }
