@@ -35,7 +35,7 @@ public class MovimientoJugador : MonoBehaviour
     //Variables para combinacion de botones (InputBuffer)
     private string buffer = new string("");
     private string combinacionValida = "UUAA";
-    private float maxTimeDif = 1;
+    private float maxTimeDif = 2;
     private float timeDif;
 
 
