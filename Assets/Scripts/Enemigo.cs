@@ -17,6 +17,8 @@ public class Enemigo : MonoBehaviour
     //Sprite
     SpriteRenderer spRd;
 
+    public bool parado = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class Enemigo : MonoBehaviour
     {
         range = Vector2.Distance(transform.position, target.position);
 
-        if (range < minDistance)
+        if (range < minDistance && !parado)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 			animator.SetBool("isWalking", true);
@@ -65,9 +67,24 @@ public class Enemigo : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            parado = true;
+            if (!IsInvoking("Muevete"))
+                Invoke("Muevete", 3f);
+        }
+    }
+
     private void HacerVulnerable()
     {
         spRd.color = Color.white;
+    }
+
+    private void Muevete()
+    {
+        parado = false;
     }
 
 }

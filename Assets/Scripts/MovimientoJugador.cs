@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MovimientoJugador : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class MovimientoJugador : MonoBehaviour
     //Declaración de variables
     [Range(1, 10)] public float velocidad;
     [Range(0, 10)] public int puntuacion;
-    public GameObject Texto;
+    public TextMeshProUGUI Texto;
+    public TextMeshProUGUI TextoVidas;
     Rigidbody2D rb2d;
     SpriteRenderer spRd;
 
@@ -24,6 +26,19 @@ public class MovimientoJugador : MonoBehaviour
     [Range(1, 500)] public float potenciaSalto;
 	
 	public Joystick joystick;
+
+    //Variable para las vidas
+    public int numVidas;
+    public bool vulnerable;
+    public bool invencible;
+
+    //Variables para combinacion de botones (InputBuffer)
+    private string buffer = new string("");
+    private string combinacionValida = "UUAA";
+    private float maxTimeDif = 1;
+    private float timeDif;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +48,13 @@ public class MovimientoJugador : MonoBehaviour
 
         characterIPositionX = transform.position.x;
         characterIPositionY = transform.position.y;
+
+        if (TextoVidas != null)
+        {
+            TextoVidas.text = numVidas.ToString();
+        }
+
+        timeDif = maxTimeDif;
     }
 
     // Update is called once per frame
@@ -43,6 +65,16 @@ public class MovimientoJugador : MonoBehaviour
             animator.SetBool("isAttacking", true);
 			isAttack=true;
         }*/
+
+        timeDif = timeDif - Time.deltaTime;
+        if (timeDif <= 0)
+        {
+            buffer = "";
+        }
+
+        checkPatterns();
+
+
     }
 
     void FixedUpdate()
@@ -105,9 +137,9 @@ public class MovimientoJugador : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Limite"))
         {
-            transform.position = (new Vector2(characterIPositionX, characterIPositionY));
-            rb2d.velocity = new Vector2(0, 0);
+            Respawn();
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -123,15 +155,13 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            //Respawn
-            transform.position = (new Vector2(characterIPositionX, characterIPositionY));
-            rb2d.velocity = new Vector2(0, 0);
+            QuitarVida();
         }
     }
 
     public void IncrementarCantidad() {
         puntuacion++;
-        Texto.GetComponent<TMPro.TextMeshProUGUI>().text = puntuacion + "/2";
+        Texto.text = puntuacion + "/2";
     }
 
     public void ReachedCheckpoint() {
@@ -146,7 +176,8 @@ public class MovimientoJugador : MonoBehaviour
     }
 	
 	public void Attack(){
-		if (!isAttack && !isWalking && !isJumping)
+        addToBuffer("A");
+        if (!isAttack && !isWalking && !isJumping)
         {
             animator.SetBool("isAttacking", true);
 			isAttack=true;
@@ -154,11 +185,64 @@ public class MovimientoJugador : MonoBehaviour
 	}
 	
 	public void Jump(){
-		if (!isJumping) 
+        addToBuffer("U");
+        if (!isJumping) 
         {
 			animator.SetBool("isJump", true);
             rb2d.AddForce(Vector2.up * potenciaSalto);
             isJumping = true;    
         }
 	}
+
+
+    public void Respawn()
+    {
+        numVidas = 3;
+        if (TextoVidas.text != null)
+        {
+            TextoVidas.text = numVidas.ToString();
+        }
+        transform.position = (new Vector2(characterIPositionX, characterIPositionY));
+        rb2d.velocity = new Vector2(0, 0);
+    }
+    public void QuitarVida()
+    {
+        if (vulnerable && !invencible)
+        {
+            vulnerable = false;
+            numVidas--;
+            TextoVidas.text = numVidas.ToString();
+            
+            if (numVidas == 0)
+            {
+                Respawn();
+            }
+        }
+
+        if (!IsInvoking("HacerVulnerable"))
+            Invoke("HacerVulnerable", 1f);
+        spRd.color = Color.red;
+    }
+
+    public void HacerVulnerable()
+    {
+        vulnerable = true;
+        spRd.color = Color.white;
+    }
+
+    private void addToBuffer(string c)
+    {
+        timeDif = maxTimeDif;
+        buffer += c;
+    }
+
+    private void checkPatterns()
+    {        
+        if (buffer.EndsWith(combinacionValida))
+        {
+            Debug.Log("Combinacion correcta");
+            invencible = true;
+            buffer = "";
+        }
+    }
 }
