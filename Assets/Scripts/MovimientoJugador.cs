@@ -198,7 +198,7 @@ public class MovimientoJugador : MonoBehaviour
     public void Respawn()
     {
         numVidas = 3;
-        if (TextoVidas.text != null)
+        if (TextoVidas != null)
         {
             TextoVidas.text = numVidas.ToString();
         }
