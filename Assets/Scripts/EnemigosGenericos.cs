@@ -49,17 +49,17 @@ public class EnemigosGenericos : MonoBehaviour
         {
             Destroy(gameObject);
         }
-		/*if (collision.gameObject.CompareTag("Player"))
+		if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<MovimientoJugador>().QuitarVida();
-        }*/
+        }
     }
 	
-    /*private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<MovimientoJugador>().QuitarVida();
         }
-    }*/
+    }
 }
