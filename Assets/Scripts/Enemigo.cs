@@ -6,7 +6,7 @@ public class Enemigo : MonoBehaviour
 {
     //Movimiento
     public Transform target;
-    public float speed = 2f;
+    public float speed = 4f;
     private float minDistance = 5f;
     private float range;
 	private Vector3 posicionInicio;
@@ -73,7 +73,7 @@ public class Enemigo : MonoBehaviour
         {
             parado = true;
             if (!IsInvoking("Muevete"))
-                Invoke("Muevete", 3f);
+                Invoke("Muevete", 1.2f);
         }
     }
 

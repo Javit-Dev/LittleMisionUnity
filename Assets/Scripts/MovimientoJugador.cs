@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MovimientoJugador : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class MovimientoJugador : MonoBehaviour
     [Range(1, 10)] public float velocidad;
     [Range(0, 10)] public int puntuacion;
     public TextMeshProUGUI Texto;
-    public TextMeshProUGUI TextoVidas;
     Rigidbody2D rb2d;
     SpriteRenderer spRd;
 
@@ -37,7 +37,8 @@ public class MovimientoJugador : MonoBehaviour
     private string combinacionValida = "UUAA";
     private float maxTimeDif = 2;
     private float timeDif;
-
+	
+	public GameObject[] vida;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +49,6 @@ public class MovimientoJugador : MonoBehaviour
 
         characterIPositionX = transform.position.x;
         characterIPositionY = transform.position.y;
-
-        if (TextoVidas != null)
-        {
-            TextoVidas.text = numVidas.ToString();
-        }
 
         timeDif = maxTimeDif;
     }
@@ -161,7 +157,7 @@ public class MovimientoJugador : MonoBehaviour
 
     public void IncrementarCantidad() {
         puntuacion++;
-        Texto.text = puntuacion + "/2";
+        Texto.text = puntuacion + "/4";
     }
 
     public void ReachedCheckpoint() {
@@ -198,9 +194,9 @@ public class MovimientoJugador : MonoBehaviour
     public void Respawn()
     {
         numVidas = 3;
-        if (TextoVidas != null)
+		foreach (GameObject a in vida)
         {
-            TextoVidas.text = numVidas.ToString();
+            a.GetComponent<Image>().color=Color.white;
         }
         transform.position = (new Vector2(characterIPositionX, characterIPositionY));
         rb2d.velocity = new Vector2(0, 0);
@@ -211,8 +207,8 @@ public class MovimientoJugador : MonoBehaviour
         {
             vulnerable = false;
             numVidas--;
-            TextoVidas.text = numVidas.ToString();
-            
+            vida[numVidas].GetComponent<Image>().color=Color.gray;
+			
             if (numVidas == 0)
             {
                 Respawn();
