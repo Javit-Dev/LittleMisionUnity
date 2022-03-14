@@ -8718,7 +8718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0074854, y: 1.4, z: -10}
+  m_LocalPosition: {x: -3.9702837, y: 1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8804,7 +8804,7 @@ GameObject:
   - component: {fileID: 524539089}
   - component: {fileID: 524539088}
   m_Layer: 5
-  m_Name: Herat
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12765,6 +12765,7 @@ GameObject:
   - component: {fileID: 952753448}
   - component: {fileID: 952753447}
   - component: {fileID: 952753446}
+  - component: {fileID: 952753449}
   m_Layer: 5
   m_Name: ButtonAttack
   m_TagString: Untagged
@@ -12835,19 +12836,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 952753447}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1459549188}
-        m_TargetAssemblyTypeName: MovimientoJugador, Assembly-CSharp
-        m_MethodName: Attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &952753447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12886,6 +12875,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952753444}
   m_CullTransparentMesh: 1
+--- !u!114 &952753449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952753444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1459549188}
+          m_TargetAssemblyTypeName: MovimientoJugador, Assembly-CSharp
+          m_MethodName: Attack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1000677532
 GameObject:
   m_ObjectHideFlags: 0
@@ -13574,6 +13592,7 @@ GameObject:
   - component: {fileID: 1229940117}
   - component: {fileID: 1229940116}
   - component: {fileID: 1229940115}
+  - component: {fileID: 1229940118}
   m_Layer: 5
   m_Name: ButtonJump
   m_TagString: Untagged
@@ -13644,19 +13663,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1229940116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1459549188}
-        m_TargetAssemblyTypeName: MovimientoJugador, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1229940116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13695,6 +13702,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229940113}
   m_CullTransparentMesh: 1
+--- !u!114 &1229940118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229940113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1459549188}
+          m_TargetAssemblyTypeName: MovimientoJugador, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1259393293
 GameObject:
   m_ObjectHideFlags: 0
@@ -14915,7 +14951,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7790476, y: 1}
+    m_SensorSize: {x: 1.7978364, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14932,7 +14968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767345210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0074854, y: 1.4, z: -10}
+  m_LocalPosition: {x: -3.9702837, y: 1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15412,6 +15448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texto: {fileID: 175970706}
+  target: {fileID: 1459549185}
 --- !u!4 &3722219381151239703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3722219380157492219, guid: 845c70fb9181e40479a33a8dcdb60fc1, type: 3}

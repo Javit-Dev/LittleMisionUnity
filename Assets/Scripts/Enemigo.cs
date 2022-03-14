@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     //Movimiento
-    public Transform target;
+    public Transform target; //Objetivo (Jugador)
     public float speed = 4f;
     private float minDistance = 5f;
     private float range;

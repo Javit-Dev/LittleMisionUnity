@@ -37,6 +37,10 @@ public class MovimientoJugador : MonoBehaviour
     private string combinacionValida = "UUAA";
     private float maxTimeDif = 2;
     private float timeDif;
+
+    //Variables para ataque (InputBuffer)
+    private Queue<string> inputBuffer;
+
 	
 	public GameObject[] vida;
 
@@ -50,6 +54,8 @@ public class MovimientoJugador : MonoBehaviour
         characterIPositionX = transform.position.x;
         characterIPositionY = transform.position.y;
 
+        inputBuffer = new Queue<string>();
+
         timeDif = maxTimeDif;
     }
 
@@ -61,7 +67,8 @@ public class MovimientoJugador : MonoBehaviour
             animator.SetBool("isAttacking", true);
 			isAttack=true;
         }*/
-
+        
+        //Calcula el tiempo y comprueba el patron del buffer de combinaciones
         timeDif = timeDif - Time.deltaTime;
         if (timeDif <= 0)
         {
@@ -70,6 +77,17 @@ public class MovimientoJugador : MonoBehaviour
 
         checkPatterns();
 
+        //Si el inputBuffer (El de ataque) tiene otro ataque en su cola lo ejecuta
+        if (inputBuffer.Count > 0)
+        {
+            //Ataque
+            if (!isAttack && !isWalking && !isJumping && inputBuffer.Peek() == "A")
+            {
+                animator.SetBool("isAttacking", true);
+                isAttack = true;
+                inputBuffer.Dequeue();
+            }
+        }
 
     }
 
@@ -167,28 +185,40 @@ public class MovimientoJugador : MonoBehaviour
 
     public void AttackEnded()
     {
-        animator.SetBool("isAttacking", false);
-		isAttack=false;
+        if (inputBuffer.Count > 0)
+        {
+            if (inputBuffer.Peek() != "A")
+            {
+                animator.SetBool("isAttacking", false);
+                isAttack = false;
+            }
+        } else
+        {
+            animator.SetBool("isAttacking", false);
+            isAttack = false;
+        }
+
     }
 	
 	public void Attack(){
         addToBuffer("A");
-        if (!isAttack && !isWalking && !isJumping)
-        {
-            animator.SetBool("isAttacking", true);
-			isAttack=true;
-        }
+        inputBuffer.Enqueue("A");
+        Invoke("quitarAccion", 0.5f);
 	}
 	
 	public void Jump(){
         addToBuffer("U");
-        if (!isJumping) 
+        inputBuffer.Enqueue("U");
+        Invoke("quitarAccion", 0.5f);
+        //Salto
+        if (!isJumping)
         {
-			animator.SetBool("isJump", true);
+            animator.SetBool("isJump", true);
             rb2d.AddForce(Vector2.up * potenciaSalto);
-            isJumping = true;    
+            isJumping = true;
+            inputBuffer.Dequeue();
         }
-	}
+    }
 
 
     public void Respawn()
@@ -239,6 +269,14 @@ public class MovimientoJugador : MonoBehaviour
             Debug.Log("Combinacion correcta");
             invencible = true;
             buffer = "";
+        }
+    }
+
+    private void quitarAccion()
+    {
+        if (inputBuffer.Count > 0)
+        {
+            inputBuffer.Dequeue();
         }
     }
 }
