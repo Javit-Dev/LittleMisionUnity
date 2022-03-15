@@ -18,7 +18,7 @@ public class PasoEscena : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (collision.gameObject.GetComponent<MovimientoJugador>().puntuacion == 4)
+            if (collision.gameObject.GetComponent<MovimientoJugador>().puntuacion >= 4)
             {
                 SceneManager.LoadScene(nextScene);
             }
