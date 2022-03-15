@@ -1,13 +1,20 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "RF8M64AEHTA",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RF8M64AEHTA",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 16882,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "RF8M64AEHTA",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16882,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {

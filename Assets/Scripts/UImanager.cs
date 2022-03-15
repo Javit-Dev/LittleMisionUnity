@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 public class UImanager : MonoBehaviour
 {
     public GameObject optionsPanel;
+    public GameObject sonido;
 	
     public void OptionsPanel() {
         Time.timeScale = 0;
         optionsPanel.SetActive(true);
+        sonido.GetComponent<AudioSource>().Pause();
     }
 
     public void Return() {
         Time.timeScale = 1;
         optionsPanel.SetActive(false);
+        sonido.GetComponent<AudioSource>().Play();
     }
 
     public void IrAlJuego()

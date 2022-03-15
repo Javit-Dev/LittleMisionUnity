@@ -41260,6 +41260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 2069532528}
+  sonido: {fileID: 1783773169}
 --- !u!4 &1561268701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6303841599487074537, guid: 5c13da2f10fdb584d9ca018373d06853, type: 3}

@@ -30942,6 +30942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 144875442}
+  sonido: {fileID: 1147703932}
 --- !u!114 &1537797537
 MonoBehaviour:
   m_ObjectHideFlags: 0
