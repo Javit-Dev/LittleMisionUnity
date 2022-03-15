@@ -40720,7 +40720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchorMax.x
@@ -43009,6 +43009,22 @@ PrefabInstance:
       propertyPath: vida.Array.data[2]
       value: 
       objectReference: {fileID: 1645851122}
+    - target: {fileID: 2668183440070485904, guid: 811f1e7ee63d19d4d9bb19ebe7f15f53, type: 3}
+      propertyPath: m_Size.x
+      value: 0.36904603
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668183440070485904, guid: 811f1e7ee63d19d4d9bb19ebe7f15f53, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2970295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668183440070485904, guid: 811f1e7ee63d19d4d9bb19ebe7f15f53, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008448966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668183440070485904, guid: 811f1e7ee63d19d4d9bb19ebe7f15f53, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.6742387
+      objectReference: {fileID: 0}
     - target: {fileID: 2668183440070485907, guid: 811f1e7ee63d19d4d9bb19ebe7f15f53, type: 3}
       propertyPath: m_Name
       value: Personaje
