@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameManager);
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Maestre");
 
     }
 

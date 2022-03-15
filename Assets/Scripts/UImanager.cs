@@ -17,6 +17,11 @@ public class UImanager : MonoBehaviour
         optionsPanel.SetActive(false);
     }
 
+    public void IrAlJuego()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public void GoMainMenu() {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
