@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8M64AEHTA",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 16882,
+        "processId": 32373,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,24 @@
             "deviceId": "RF8M64AEHTA",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 16882,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8M64AEHTA",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 11823,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8M64AEHTA",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 2460,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8M64AEHTA",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 32373,
             "exited": false
         }
     ],

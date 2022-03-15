@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -27574,7 +27574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -27933,7 +27933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -28419,7 +28419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -28484,7 +28484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -28549,7 +28549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -29205,7 +29205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -29880,7 +29880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -30405,7 +30405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -30897,7 +30897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -31296,7 +31296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -31707,7 +31707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -31823,7 +31823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -32111,7 +32111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -32465,7 +32465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -32686,7 +32686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -33162,7 +33162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
@@ -33227,7 +33227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoEspera
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2467418182216870677, guid: 7bb000b753564214e8d86c6a1e16b9ee, type: 3}
       propertyPath: tiempoaparece
