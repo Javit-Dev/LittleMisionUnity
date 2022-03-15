@@ -26313,7 +26313,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8244972, y: 1}
+    m_SensorSize: {x: 1.9693593, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -26509,7 +26509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.8519, y: -8.508795, z: -10}
+  m_LocalPosition: {x: -37.12759, y: -8.510032, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29051,7 +29051,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3309842987730255662, guid: 56a2980427987b04ba5c7d01d14b7d83, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ee0700a718992de40a469d7f2bb7ca87, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a8187882e8550d544bb81d5632ea27c6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
