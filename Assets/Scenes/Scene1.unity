@@ -8795,7 +8795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.698671, y: 1.4, z: -10}
+  m_LocalPosition: {x: -4.5378246, y: 1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14832,11 +14832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5021126690517080313, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.81
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 5021126690517080313, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.03
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 5021126690517080313, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14922,14 +14922,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0.93000114, z: 0}
-  m_LookaheadTime: 0
+  m_LookaheadTime: 0.768
   m_LookaheadSmoothing: 0
-  m_LookaheadIgnoreY: 0
+  m_LookaheadIgnoreY: 1
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.302
+  m_ScreenX: 0.336
   m_ScreenY: 0.49999988
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.25
@@ -15156,7 +15156,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9350146, y: 1}
+    m_SensorSize: {x: 1.8244972, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15173,7 +15173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767345210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.698671, y: 1.4, z: -10}
+  m_LocalPosition: {x: -4.5378246, y: 1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15274,7 +15274,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1962444412
 RectTransform:
