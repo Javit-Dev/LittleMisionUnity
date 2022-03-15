@@ -14870,6 +14870,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5021126690517080315, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5651798
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021126690517080315, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5399711
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021126690517080315, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.08660412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021126690517080315, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.019985557
+      objectReference: {fileID: 0}
     - target: {fileID: 5021126690517080317, guid: 55d554e5aeff1a840842daca29f70b3f, type: 3}
       propertyPath: m_Name
       value: apple_item (2)
