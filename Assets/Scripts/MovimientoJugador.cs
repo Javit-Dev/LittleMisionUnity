@@ -87,7 +87,7 @@ public class MovimientoJugador : MonoBehaviour
             if (!isAttack && !isWalking && !isJumping && inputBuffer.Peek() == "A")
             {              
                 animator.SetBool("isAttacking", true);
-                GetComponent<AudioSource>().PlayOneShot(attackSound);
+                
                 isAttack = true;
                 inputBuffer.Dequeue();
             }
@@ -190,6 +190,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (inputBuffer.Count > 0)
         {
+			GetComponent<AudioSource>().PlayOneShot(attackSound);
             if (inputBuffer.Peek() != "A")
             {
                 animator.SetBool("isAttacking", false);
@@ -199,6 +200,7 @@ public class MovimientoJugador : MonoBehaviour
         {
             animator.SetBool("isAttacking", false);
             isAttack = false;
+			GetComponent<AudioSource>().PlayOneShot(attackSound);
         }
 
     }
@@ -207,6 +209,7 @@ public class MovimientoJugador : MonoBehaviour
         addToBuffer("A");      
         inputBuffer.Enqueue("A");
         Invoke("quitarAccion", 0.5f);
+		
 	}
 	
 	public void Jump(){
@@ -227,10 +230,18 @@ public class MovimientoJugador : MonoBehaviour
     public void Respawn()
     {
         numVidas = 3;
-		foreach (GameObject a in vida)
-        {
-            a.GetComponent<Image>().color=Color.white;
-        }
+		
+		if(invencible){
+			foreach (GameObject a in vida)
+			{
+				a.GetComponent<Image>().color=Color.yellow;
+			}
+		}else{
+			foreach (GameObject a in vida)
+			{
+				a.GetComponent<Image>().color=Color.white;
+			}
+		}
         transform.position = (new Vector2(characterIPositionX, characterIPositionY));
         rb2d.velocity = new Vector2(0, 0);
     }
@@ -273,6 +284,10 @@ public class MovimientoJugador : MonoBehaviour
             Debug.Log("Combinacion correcta");
             invencible = true;
             buffer = "";
+			foreach (GameObject a in vida)
+			{
+				a.GetComponent<Image>().color=Color.yellow;
+			}
         }
     }
 
