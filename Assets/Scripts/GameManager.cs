@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     private GameObject gameManager;
     private string mensajeFin;
+    //Tiempos
+    private Queue<float> tiempos = new Queue<float>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +24,26 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void cambiarEscena(string SiguienteScene)
-    {
-        SceneManager.LoadScene(SiguienteScene);
-    }
 
-    public void FinJuego(bool ganar) {
-        mensajeFin = (ganar) ? "Felicidades has terminado el juego" : "Uuuuuuuuuuuuuuuuuuuuuuuuuh perdedor";
 
-        cambiarEscena("Fin");
+    public void FinJuego() {
+        float tiempoTotal = 0;
+        while (tiempos.Count > 0)
+        {
+            tiempoTotal = tiempoTotal+tiempos.Dequeue();
+        }
+
+        TimeSpan ts = TimeSpan.FromSeconds(tiempoTotal);
+
+        mensajeFin = "Felicidades has terminado el juego " + " Tiempo: " + ts.Minutes.ToString("00")+":"+ts.Seconds.ToString("00") ;
     }
 
     public string getMensajeFinal() {
         return mensajeFin;
+    }
+
+    public void almacenarTiempo(float tiempo)
+    {
+        tiempos.Enqueue(tiempo);
     }
 }
