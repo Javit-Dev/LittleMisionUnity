@@ -13,6 +13,9 @@ public class MovimientoJugador : MonoBehaviour
     public TextMeshProUGUI Texto;
     Rigidbody2D rb2d;
     SpriteRenderer spRd;
+    [SerializeField] AudioClip attackSound;
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip hurtSound;
 
     private float characterIPositionX;
     private float characterIPositionY;
@@ -82,8 +85,9 @@ public class MovimientoJugador : MonoBehaviour
         {
             //Ataque
             if (!isAttack && !isWalking && !isJumping && inputBuffer.Peek() == "A")
-            {
+            {              
                 animator.SetBool("isAttacking", true);
+                GetComponent<AudioSource>().PlayOneShot(attackSound);
                 isAttack = true;
                 inputBuffer.Dequeue();
             }
@@ -200,18 +204,19 @@ public class MovimientoJugador : MonoBehaviour
     }
 	
 	public void Attack(){
-        addToBuffer("A");
+        addToBuffer("A");      
         inputBuffer.Enqueue("A");
         Invoke("quitarAccion", 0.5f);
 	}
 	
 	public void Jump(){
-        addToBuffer("U");
+        addToBuffer("U");        
         inputBuffer.Enqueue("U");
         Invoke("quitarAccion", 0.5f);
         //Salto
         if (!isJumping)
         {
+            GetComponent<AudioSource>().PlayOneShot(jumpSound);
             animator.SetBool("isJump", true);
             rb2d.AddForce(Vector2.up * potenciaSalto);
             inputBuffer.Dequeue();
@@ -235,6 +240,7 @@ public class MovimientoJugador : MonoBehaviour
         {
             vulnerable = false;
             numVidas--;
+            GetComponent<AudioSource>().PlayOneShot(hurtSound);
             vida[numVidas].GetComponent<Image>().color=Color.gray;
 			
             if (numVidas == 0)
