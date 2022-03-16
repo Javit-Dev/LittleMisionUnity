@@ -7,7 +7,8 @@ public class UImanager : MonoBehaviour
 {
     public GameObject optionsPanel;
     public GameObject sonido;
-	
+    private GameManager gameManager;
+
     public void OptionsPanel() {
         Time.timeScale = 0;
         optionsPanel.SetActive(true);
@@ -31,7 +32,9 @@ public class UImanager : MonoBehaviour
     }
 
     public void QuitGame() {
-		Time.timeScale = 1;
+        gameManager = FindObjectOfType<GameManager>();
+        gameManager.vaciarTiempos();
+        Time.timeScale = 1;
         optionsPanel.SetActive(false);
         SceneManager.LoadScene("Preload");
     }

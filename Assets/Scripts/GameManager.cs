@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     //Tiempos
     private Queue<float> tiempos = new Queue<float>();
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +44,9 @@ public class GameManager : MonoBehaviour
     public void almacenarTiempo(float tiempo)
     {
         tiempos.Enqueue(tiempo);
+    }
+
+    public void vaciarTiempos() {
+        tiempos.Clear();
     }
 }
