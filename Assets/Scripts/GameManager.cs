@@ -31,10 +31,22 @@ public class GameManager : MonoBehaviour
         {
             tiempoTotal = tiempoTotal+tiempos.Dequeue();
         }
+        
 
+        //Se guarda el mejor tiempo
+        if (PlayerPrefs.HasKey("MejorTiempo")) {
+            if (PlayerPrefs.GetFloat("MejorTiempo") > tiempoTotal)
+                PlayerPrefs.SetFloat("MejorTiempo", tiempoTotal);
+        } else
+        {
+            PlayerPrefs.SetFloat("MejorTiempo", tiempoTotal);
+        }
+
+        //Tiempo a string
         TimeSpan ts = TimeSpan.FromSeconds(tiempoTotal);
+        String tiempo = ts.Minutes.ToString("00") + ":" + ts.Seconds.ToString("00");
 
-        mensajeFin = "Felicidades has terminado el juego " + " Tiempo: " + ts.Minutes.ToString("00")+":"+ts.Seconds.ToString("00") ;
+        mensajeFin = "Felicidades has terminado el juego " + " Tiempo: " + tiempo ;
     }
 
     public string getMensajeFinal() {

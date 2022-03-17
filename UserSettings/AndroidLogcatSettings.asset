@@ -1,44 +1,13 @@
 {
-    "m_SelectedDeviceId": "RF8M64AEHTA",
+    "m_SelectedDeviceId": "",
     "m_SelectedPackage": {
-        "deviceId": "RF8M64AEHTA",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 6642,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "RF8M64AEHTA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 16882,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8M64AEHTA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 11823,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8M64AEHTA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 2460,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8M64AEHTA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 32373,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8M64AEHTA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 6642,
-            "exited": false
-        }
-    ],
+    "m_KnownPackagesForSerialization": [],
     "m_Tags": {
         "m_Entries": [
             {
@@ -72,20 +41,9 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 300.0,
-        "MemoryWindowWidth": 170.0,
-        "MemoryTypeEnabled": [
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true
-        ],
+        "MemoryWindowHeight": 0.0,
+        "MemoryWindowWidth": 0.0,
+        "MemoryTypeEnabled": [],
         "MemoryGroup": 2,
         "Behavior": 0
     },
