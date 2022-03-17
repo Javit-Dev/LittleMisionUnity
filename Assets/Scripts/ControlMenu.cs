@@ -18,7 +18,7 @@ public class ControlMenu : MonoBehaviour
 
             TimeSpan ts = TimeSpan.FromSeconds(mejorTiempo);
             String tiempo = ts.Minutes.ToString("00") + ":" + ts.Seconds.ToString("00");
-            textoTiempo.text = "Mejor tiempo: " + tiempo;
+            textoTiempo.text = "Mejor tiempo \n" + tiempo;
         }
     }
 
