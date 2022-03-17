@@ -33,6 +33,10 @@ public class ControlMenu : MonoBehaviour
     public void OnButtonSalir() {
         Application.Quit();
     }
+    public void Derechos()
+    {
+        SceneManager.LoadScene("Derechos");
+    }
 
     public void OnButtonMenu() {
         SceneManager.LoadScene("Menu");
